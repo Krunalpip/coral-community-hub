@@ -48,18 +48,18 @@ const JoinSection = () => {
   return (
     <section className="section-padding bg-card relative overflow-hidden">
       {/* Decorative background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5" />
 
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div>
-            <span className="inline-block text-primary font-medium text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
               Begin Your Journey
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
               Qualification, Not Registration.{" "}
-              <span className="text-gradient-gold">Alignment, Not Selling.</span>
+              <span className="text-gradient-brand">Alignment, Not Selling.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               We take membership seriously. This brief form helps us understand your
@@ -80,7 +80,7 @@ const JoinSection = () => {
                   "Guided onboarding with full documentation support",
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground text-sm">{item}</span>
                   </div>
                 ))}
@@ -195,7 +195,7 @@ const JoinSection = () => {
 
               <Button
                 type="submit"
-                variant="gold"
+                variant="brand"
                 size="lg"
                 className="w-full group"
                 disabled={isSubmitting}

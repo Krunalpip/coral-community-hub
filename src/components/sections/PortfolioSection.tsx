@@ -59,12 +59,12 @@ const PortfolioSection = () => {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-primary font-medium text-sm tracking-wider uppercase mb-4">
+          <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
             Portfolio Snapshot
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Real Assets. Real Returns.{" "}
-            <span className="text-gradient-gold">Documented Performance.</span>
+            <span className="text-gradient-brand">Documented Performance.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             Every portfolio position represents tangible assets, verified due diligence,
@@ -77,16 +77,16 @@ const PortfolioSection = () => {
           {portfolioItems.map((item) => (
             <div
               key={item.id}
-              className="group p-6 md:p-8 rounded-2xl bg-background border border-border hover:border-primary/30 transition-all duration-300"
+              className="group p-6 md:p-8 rounded-2xl bg-background border border-border hover:border-accent/30 hover:shadow-hover transition-all duration-300"
             >
               {/* Header */}
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <item.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <item.icon className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <span className="text-xs text-primary font-medium uppercase tracking-wider">
+                    <span className="text-xs text-accent font-medium uppercase tracking-wider">
                       {item.sector}
                     </span>
                     <h3 className="font-display text-xl font-semibold text-foreground">
@@ -94,7 +94,7 @@ const PortfolioSection = () => {
                     </h3>
                   </div>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
                   {item.status}
                 </span>
               </div>
@@ -116,7 +116,7 @@ const PortfolioSection = () => {
                 </div>
                 <div>
                   <span className="text-xs text-muted-foreground block mb-1">Target Return</span>
-                  <span className="text-sm text-primary font-semibold">{item.returns}</span>
+                  <span className="text-sm text-accent font-semibold">{item.returns}</span>
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@ const PortfolioSection = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <Link to="/portfolio">
-            <Button variant="gold-outline" size="lg" className="group">
+            <Button variant="brand-outline" size="lg" className="group">
               View Full Portfolio
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Button>

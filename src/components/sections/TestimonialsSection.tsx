@@ -54,12 +54,12 @@ const TestimonialsSection = () => {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-primary font-medium text-sm tracking-wider uppercase mb-4">
+          <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
             Member Perspectives
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Intelligent Investors.{" "}
-            <span className="text-gradient-gold">Honest Reflections.</span>
+            <span className="text-gradient-brand">Honest Reflections.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             Hear from community members about their experience with structured wealth participation.
@@ -68,10 +68,10 @@ const TestimonialsSection = () => {
 
         {/* Testimonial Card */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative p-8 md:p-12 rounded-2xl bg-background border border-border">
+          <div className="relative p-8 md:p-12 rounded-2xl bg-background border border-border shadow-card">
             {/* Quote Icon */}
-            <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-              <Quote className="w-6 h-6 text-primary" />
+            <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+              <Quote className="w-6 h-6 text-accent" />
             </div>
 
             {/* Content */}
@@ -88,7 +88,7 @@ const TestimonialsSection = () => {
                   <p className="text-muted-foreground text-sm">
                     {currentTestimonial.role}
                   </p>
-                  <p className="text-primary text-xs mt-1">
+                  <p className="text-accent text-xs mt-1">
                     Member since {currentTestimonial.memberSince}
                   </p>
                 </div>
@@ -97,14 +97,14 @@ const TestimonialsSection = () => {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={prevTestimonial}
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-all"
                     aria-label="Previous testimonial"
                   >
                     <ChevronLeft size={20} />
                   </button>
                   <button
                     onClick={nextTestimonial}
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-all"
                     aria-label="Next testimonial"
                   >
                     <ChevronRight size={20} />
@@ -120,7 +120,7 @@ const TestimonialsSection = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? "w-8 bg-primary" : "bg-muted"
+                    index === currentIndex ? "w-8 bg-accent" : "bg-muted"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

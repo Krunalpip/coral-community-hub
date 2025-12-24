@@ -52,18 +52,22 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          light: "hsl(var(--navy-light))",
+          dark: "hsl(var(--navy-dark))",
+        },
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          light: "hsl(var(--teal-light))",
+        },
         gold: {
           DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
-        },
-        midnight: {
-          DEFAULT: "hsl(var(--midnight))",
-          light: "hsl(var(--midnight-light))",
         },
         cream: {
           DEFAULT: "hsl(var(--cream))",
-          muted: "hsl(var(--cream-muted))",
+          dark: "hsl(var(--cream-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -77,8 +81,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Playfair Display", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Montserrat", "system-ui", "sans-serif"],
+        sans: ["Open Sans", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -121,8 +125,8 @@ export default {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gold-gradient": "linear-gradient(135deg, hsl(43 74% 49%), hsl(43 80% 60%))",
-        "dark-gradient": "linear-gradient(180deg, hsl(222 47% 6%), hsl(222 40% 10%))",
+        "brand-gradient": "linear-gradient(135deg, hsl(210 55% 20%), hsl(187 72% 45%))",
+        "hero-gradient": "linear-gradient(180deg, hsl(210 20% 98%), hsl(0 0% 100%))",
       },
     },
   },

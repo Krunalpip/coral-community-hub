@@ -14,12 +14,12 @@ const CommunitySection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Text Content */}
           <div>
-            <span className="inline-block text-primary font-medium text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
               Why Community Matters
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
               From Accumulation to{" "}
-              <span className="text-gradient-gold">Structured Participation</span>
+              <span className="text-gradient-brand">Structured Participation</span>
             </h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
@@ -41,18 +41,18 @@ const CommunitySection = () => {
 
             {/* Key Points */}
             <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border">
-                <Shield className="w-5 h-5 text-primary flex-shrink-0" />
+              <div className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border hover:shadow-card transition-shadow">
+                <Shield className="w-5 h-5 text-accent flex-shrink-0" />
                 <span className="text-sm text-foreground font-medium">Full Transparency</span>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border">
-                <Users className="w-5 h-5 text-primary flex-shrink-0" />
+              <div className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border hover:shadow-card transition-shadow">
+                <Users className="w-5 h-5 text-accent flex-shrink-0" />
                 <span className="text-sm text-foreground font-medium">Risk Profiling</span>
               </div>
             </div>
 
             {/* Income Range */}
-            <div className="mt-8 p-6 rounded-xl bg-gradient-card border border-primary/20">
+            <div className="mt-8 p-6 rounded-xl bg-card border border-accent/20 shadow-card">
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-sm text-muted-foreground">Monthly Income Range</span>
@@ -70,7 +70,7 @@ const CommunitySection = () => {
 
           {/* Right Column - Sectors Grid */}
           <div className="relative">
-            <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3" />
+            <div className="absolute inset-0 bg-accent/5 rounded-3xl -rotate-3" />
             <div className="relative bg-card rounded-2xl border border-border p-8">
               <h3 className="font-display text-xl font-semibold text-foreground mb-6">
                 Active Investment Sectors
@@ -79,9 +79,9 @@ const CommunitySection = () => {
                 {sectors.map((sector) => (
                   <div
                     key={sector.name}
-                    className="group p-6 rounded-xl bg-secondary/50 border border-border hover:border-primary/50 transition-all cursor-default"
+                    className="group p-6 rounded-xl bg-secondary/50 border border-border hover:border-accent/50 hover:shadow-card transition-all"
                   >
-                    <sector.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                    <sector.icon className="w-8 h-8 text-accent mb-4 group-hover:scale-110 transition-transform" />
                     <h4 className="font-medium text-foreground">{sector.name}</h4>
                   </div>
                 ))}

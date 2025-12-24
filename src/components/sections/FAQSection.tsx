@@ -45,12 +45,12 @@ const FAQSection = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Column - Header */}
           <div>
-            <span className="inline-block text-primary font-medium text-sm tracking-wider uppercase mb-4">
+            <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
               Frequently Asked Questions
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
               Clarity Before{" "}
-              <span className="text-gradient-gold">Commitment</span>
+              <span className="text-gradient-brand">Commitment</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               We believe informed investors make better decisions. These questions
@@ -68,7 +68,7 @@ const FAQSection = () => {
               </p>
               <a
                 href="/contact"
-                className="text-primary font-medium text-sm hover:underline"
+                className="text-accent font-medium text-sm hover:underline"
               >
                 Contact Us →
               </a>
@@ -82,9 +82,9 @@ const FAQSection = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/30"
+                  className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-accent/30"
                 >
-                  <AccordionTrigger className="text-left font-display text-lg font-medium text-foreground hover:text-primary py-6 hover:no-underline">
+                  <AccordionTrigger className="text-left font-display text-lg font-medium text-foreground hover:text-accent py-6 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed pb-6">

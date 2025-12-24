@@ -19,25 +19,25 @@ const HeroSection = () => {
           alt="Dubai skyline at golden hour representing UAE investment opportunities"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container-custom pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 animate-fade-up">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-primary font-medium">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-8 animate-fade-up">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-sm text-accent font-medium">
               Dubai-Based Private Investment Community
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Wealth Is Not What You Accumulate.{" "}
-            <span className="text-gradient-gold">
+            <span className="text-gradient-brand">
               It Is What You Participate In.
             </span>
           </h1>
@@ -66,13 +66,13 @@ const HeroSection = () => {
 
           {/* Trust Counters */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            {stats.map((stat, index) => (
+            {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex flex-col items-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all"
+                className="flex flex-col items-center p-6 rounded-xl bg-background/80 backdrop-blur-sm border border-border hover:border-accent/30 transition-all shadow-card"
               >
-                <stat.icon className="w-6 h-6 text-primary mb-3" />
-                <span className="font-display text-3xl font-semibold text-foreground mb-1">
+                <stat.icon className="w-6 h-6 text-accent mb-3" />
+                <span className="font-display text-3xl font-bold text-foreground mb-1">
                   {stat.value}
                 </span>
                 <span className="text-sm text-muted-foreground">{stat.label}</span>
@@ -84,8 +84,8 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float">
-        <div className="w-6 h-10 rounded-full border-2 border-primary/50 flex items-start justify-center p-2">
-          <div className="w-1 h-2 rounded-full bg-primary animate-pulse" />
+        <div className="w-6 h-10 rounded-full border-2 border-accent/50 flex items-start justify-center p-2">
+          <div className="w-1 h-2 rounded-full bg-accent animate-pulse" />
         </div>
       </div>
     </section>
