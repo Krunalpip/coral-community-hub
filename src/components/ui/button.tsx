@@ -5,28 +5,31 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-gold",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-secondary hover:text-foreground",
+        ghost: "hover:bg-accent/10 hover:text-accent",
         link: "text-primary underline-offset-4 hover:underline",
-        // Premium gold variants for CWI
-        gold: "bg-gradient-gold text-primary-foreground font-semibold hover:shadow-lg hover:scale-[1.02] shadow-gold",
-        "gold-outline": "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
-        hero: "bg-gradient-gold text-primary-foreground font-semibold text-base px-8 py-3 hover:shadow-xl hover:scale-[1.02] shadow-gold",
-        "hero-outline": "border-2 border-primary/80 bg-transparent text-foreground hover:bg-primary/10 hover:border-primary backdrop-blur-sm",
-        nav: "bg-transparent text-foreground/80 hover:text-primary font-medium",
+        // CWI Professional Variants
+        brand: "bg-primary text-primary-foreground hover:bg-navy-light shadow-brand hover:shadow-hover",
+        accent: "bg-accent text-accent-foreground hover:bg-teal-light shadow-brand hover:shadow-hover",
+        "brand-outline": "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground",
+        "accent-outline": "border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground",
+        nav: "text-foreground hover:text-accent bg-transparent font-medium",
+        hero: "bg-primary text-primary-foreground hover:bg-navy-light shadow-lg hover:shadow-xl font-semibold",
+        "hero-outline": "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold bg-background/80 backdrop-blur-sm",
+        gold: "bg-gold text-navy-dark hover:bg-gold-dark font-semibold shadow-brand",
       },
       size: {
         default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3 text-sm",
-        lg: "h-12 rounded-md px-8 text-base",
-        xl: "h-14 rounded-lg px-10 text-lg",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        xl: "h-12 rounded-lg px-8 text-base",
         icon: "h-10 w-10",
       },
     },

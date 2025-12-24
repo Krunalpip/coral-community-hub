@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react";
+import cwiLogo from "@/assets/cwi-logo.png";
 
 const footerLinks = {
   company: [
@@ -23,46 +24,40 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-primary text-primary-foreground">
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center">
-                <span className="font-display text-xl font-bold text-primary-foreground">C</span>
-              </div>
-              <div>
-                <span className="font-display text-xl font-semibold text-foreground">
-                  Coral Wealth
-                </span>
-                <span className="block text-xs text-muted-foreground tracking-wider uppercase">
-                  Investment
-                </span>
-              </div>
+            <Link to="/" className="inline-block mb-6">
+              <img 
+                src={cwiLogo} 
+                alt="CWI Investment" 
+                className="h-12 w-auto brightness-0 invert"
+              />
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
               A private investment community enabling consistent, asset-backed income
               through structured participation in UAE-based opportunities.
             </p>
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/80 hover:bg-accent hover:text-accent-foreground transition-all"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/80 hover:bg-accent hover:text-accent-foreground transition-all"
                 aria-label="Twitter"
               >
                 <Twitter size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/80 hover:bg-accent hover:text-accent-foreground transition-all"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -72,7 +67,7 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-foreground mb-6">
+            <h4 className="font-display text-lg font-semibold text-primary-foreground mb-6">
               Company
             </h4>
             <ul className="space-y-3">
@@ -80,7 +75,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -91,7 +86,7 @@ const Footer = () => {
 
           {/* Investors Links */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-foreground mb-6">
+            <h4 className="font-display text-lg font-semibold text-primary-foreground mb-6">
               For Investors
             </h4>
             <ul className="space-y-3">
@@ -99,7 +94,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -110,30 +105,30 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-foreground mb-6">
+            <h4 className="font-display text-lg font-semibold text-primary-foreground mb-6">
               Contact
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
-                <span className="text-muted-foreground text-sm">
+                <MapPin size={18} className="text-accent mt-1 flex-shrink-0" />
+                <span className="text-primary-foreground/70 text-sm">
                   Dubai, United Arab Emirates
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-primary flex-shrink-0" />
+                <Mail size={18} className="text-accent flex-shrink-0" />
                 <a
                   href="mailto:info@coraluae.com"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   info@coraluae.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-primary flex-shrink-0" />
+                <Phone size={18} className="text-accent flex-shrink-0" />
                 <a
                   href="tel:+97100000000"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   +971 XX XXX XXXX
                 </a>
@@ -143,16 +138,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Coral Wealth Investment. All rights reserved.
+        <div className="mt-16 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-primary-foreground/60 text-sm">
+            © {new Date().getFullYear()} CWI Investment. All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                className="text-primary-foreground/60 hover:text-accent transition-colors text-sm"
               >
                 {link.name}
               </Link>
