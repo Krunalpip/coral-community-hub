@@ -6,6 +6,7 @@ import CommunitySection from "@/components/sections/CommunitySection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
 import WhyItWorksSection from "@/components/sections/WhyItWorksSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import VideoInsightsSection from "@/components/sections/VideoInsightsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import JoinSection from "@/components/sections/JoinSection";
 
@@ -61,6 +62,7 @@ const Index = () => {
           <PortfolioSection />
           <WhyItWorksSection />
           <TestimonialsSection />
+          <VideoInsightsSection />
           <FAQSection />
           <JoinSection />
         </main>
