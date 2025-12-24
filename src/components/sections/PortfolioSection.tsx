@@ -12,8 +12,9 @@ const portfolioItems = [
     deployed: "AED 45M",
     returns: "2.4% Monthly",
     status: "Fully Operational",
+    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop",
     description:
-      "Diversified holdings across premium residential units generating consistent rental income with capital appreciation potential.",
+      "Diversified holdings across premium residential units generating consistent rental income.",
   },
   {
     id: 2,
@@ -24,8 +25,9 @@ const portfolioItems = [
     deployed: "AED 28M",
     returns: "3.2% Monthly",
     status: "Active Distribution",
+    image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&h=400&fit=crop",
     description:
-      "Structured aircraft leasing arrangements with established regional carriers, backed by physical assets and long-term contracts.",
+      "Structured aircraft leasing with established regional carriers, backed by physical assets.",
   },
   {
     id: 3,
@@ -36,8 +38,9 @@ const portfolioItems = [
     deployed: "AED 32M",
     returns: "2.8% Monthly",
     status: "Expanding",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop",
     description:
-      "Strategic warehouse and fulfillment infrastructure supporting UAE's growing e-commerce sector with triple-net lease structures.",
+      "Strategic warehouse infrastructure supporting UAE's growing e-commerce sector.",
   },
   {
     id: 4,
@@ -48,8 +51,9 @@ const portfolioItems = [
     deployed: "AED 15M",
     returns: "5.5% Monthly",
     status: "Growth Phase",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop",
     description:
-      "Equity participation in vetted technology companies focused on industrial automation and artificial intelligence applications.",
+      "Equity participation in technology companies focused on industrial automation and AI.",
   },
 ];
 
@@ -68,55 +72,63 @@ const PortfolioSection = () => {
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             Every portfolio position represents tangible assets, verified due diligence,
-            and structured income mechanisms. No speculation. No promises. Just process and outcomes.
+            and structured income mechanisms.
           </p>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Portfolio Grid with Images */}
+        <div className="grid md:grid-cols-2 gap-8">
           {portfolioItems.map((item) => (
             <div
               key={item.id}
-              className="group p-6 md:p-8 rounded-2xl bg-background border border-border hover:border-accent/30 hover:shadow-hover transition-all duration-300"
+              className="group rounded-2xl bg-background border border-border hover:border-accent/30 hover:shadow-hover transition-all duration-300 overflow-hidden"
             >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <item.icon className="w-6 h-6 text-accent" />
+              {/* Image */}
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-white" />
                   </div>
-                  <div>
-                    <span className="text-xs text-accent font-medium uppercase tracking-wider">
-                      {item.sector}
-                    </span>
-                    <h3 className="font-display text-xl font-semibold text-foreground">
-                      {item.title}
-                    </h3>
-                  </div>
+                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
+                    {item.sector}
+                  </span>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
-                  {item.status}
-                </span>
+                <div className="absolute bottom-4 right-4">
+                  <span className="px-3 py-1 rounded-full bg-accent text-white text-xs font-medium">
+                    {item.status}
+                  </span>
+                </div>
               </div>
 
-              {/* Description */}
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                {item.description}
-              </p>
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  {item.description}
+                </p>
 
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 p-4 rounded-xl bg-card border border-border">
-                <div>
-                  <span className="text-xs text-muted-foreground block mb-1">Location</span>
-                  <span className="text-sm text-foreground font-medium">{item.location}</span>
-                </div>
-                <div>
-                  <span className="text-xs text-muted-foreground block mb-1">Capital Deployed</span>
-                  <span className="text-sm text-foreground font-medium">{item.deployed}</span>
-                </div>
-                <div>
-                  <span className="text-xs text-muted-foreground block mb-1">Target Return</span>
-                  <span className="text-sm text-accent font-semibold">{item.returns}</span>
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-card border border-border">
+                  <div className="text-center">
+                    <span className="text-xs text-muted-foreground block">Location</span>
+                    <span className="text-xs text-foreground font-medium">{item.location}</span>
+                  </div>
+                  <div className="text-center border-x border-border">
+                    <span className="text-xs text-muted-foreground block">Deployed</span>
+                    <span className="text-xs text-foreground font-medium">{item.deployed}</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-xs text-muted-foreground block">Returns</span>
+                    <span className="text-xs text-accent font-semibold">{item.returns}</span>
+                  </div>
                 </div>
               </div>
             </div>

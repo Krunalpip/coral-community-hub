@@ -12,37 +12,43 @@ const pillars = [
     icon: Search,
     title: "Intelligence Sharing",
     description:
-      "Access proprietary market insights, deal flow analysis, and sector reports developed through years of regional experience.",
+      "Access proprietary market insights and deal flow analysis from years of regional experience.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
   },
   {
     icon: ShieldCheck,
     title: "Risk Filtration",
     description:
-      "Every opportunity passes through multi-layered risk assessment including legal, financial, and operational due diligence.",
+      "Multi-layered risk assessment including legal, financial, and operational due diligence.",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop"
   },
   {
     icon: FileCheck,
     title: "Due Diligence Framework",
     description:
-      "Standardized evaluation protocols ensure consistent quality across all asset classes and investment structures.",
+      "Standardized evaluation protocols ensure consistent quality across all asset classes.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
   },
   {
     icon: Network,
     title: "Network Leverage",
     description:
-      "Benefit from established relationships with developers, operators, and institutions across the GCC region.",
+      "Established relationships with developers, operators, and institutions across the GCC.",
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop"
   },
   {
     icon: Scale,
     title: "Compliance Structure",
     description:
-      "All activities operate within UAE regulatory frameworks with proper documentation and investor protections.",
+      "All activities operate within UAE regulatory frameworks with proper documentation.",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop"
   },
   {
     icon: Users,
     title: "Decision Frameworks",
     description:
-      "Structured processes help you evaluate opportunities based on your risk tolerance, timeline, and financial goals.",
+      "Structured processes help evaluate opportunities based on your risk tolerance and goals.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop"
   },
 ];
 
@@ -69,35 +75,62 @@ const WhyItWorksSection = () => {
           </p>
         </div>
 
-        {/* Pillars Grid */}
+        {/* Pillars Grid with Images */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {pillars.map((pillar, index) => (
             <div
               key={pillar.title}
-              className="group p-8 rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-hover transition-all duration-300"
+              className="group rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-hover transition-all duration-300 overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                <pillar.icon className="w-7 h-7 text-accent" />
+              {/* Image */}
+              <div className="relative h-40 overflow-hidden">
+                <img 
+                  src={pillar.image}
+                  alt={pillar.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent/90 flex items-center justify-center shadow-lg">
+                    <pillar.icon className="w-6 h-6 text-white" />
+                  </div>
+                </div>
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                {pillar.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {pillar.description}
-              </p>
+              
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                  {pillar.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {pillar.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Statement */}
-        <div className="mt-16 p-8 md:p-12 rounded-2xl bg-card border border-accent/20 shadow-card text-center">
-          <p className="font-display text-xl md:text-2xl text-foreground mb-4">
-            "The goal is not to eliminate risk—it is to understand it, price it, and manage it."
-          </p>
-          <span className="text-muted-foreground text-sm">
-            — Core Investment Philosophy, CWI
-          </span>
+        {/* Bottom Statement with Image */}
+        <div className="mt-16 rounded-2xl overflow-hidden shadow-card">
+          <div className="relative">
+            <img 
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=300&fit=crop"
+              alt="Dubai skyline representing growth"
+              className="w-full h-48 md:h-64 object-cover"
+            />
+            <div className="absolute inset-0 bg-primary/80" />
+            <div className="absolute inset-0 flex items-center justify-center text-center px-6">
+              <div>
+                <p className="font-display text-xl md:text-2xl text-white mb-2">
+                  "The goal is not to eliminate risk—it is to understand it, price it, and manage it."
+                </p>
+                <span className="text-white/80 text-sm">
+                  — Core Investment Philosophy, CWI
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
