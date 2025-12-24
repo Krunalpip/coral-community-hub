@@ -20,7 +20,6 @@ const JoinSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
@@ -47,49 +46,58 @@ const JoinSection = () => {
 
   return (
     <section className="section-padding bg-card relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5" />
-
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Content */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Image & Content */}
           <div>
+            {/* Image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-hover mb-8">
+              <img 
+                src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=600&h=400&fit=crop"
+                alt="Professional consultation meeting"
+                className="w-full h-[300px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
+              <div className="absolute inset-0 flex items-center p-8">
+                <div className="text-white max-w-sm">
+                  <h3 className="font-display text-2xl font-bold mb-2">
+                    Start Your Wealth Journey
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    Join 850+ members building sustainable income through structured investments
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
               Begin Your Journey
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Qualification, Not Registration.{" "}
-              <span className="text-gradient-brand">Alignment, Not Selling.</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+              Qualification, Not Registration.
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              We take membership seriously. This brief form helps us understand your
-              investment profile and determine if CWI is the right fit for your
-              financial goals. All information is treated with strict confidentiality.
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              This brief form helps us understand your investment profile and determine if CWI is the right fit for your financial goals.
             </p>
 
             {/* What to Expect */}
-            <div className="space-y-4">
-              <h4 className="font-display text-lg font-semibold text-foreground">
-                What happens next:
-              </h4>
-              <div className="space-y-3">
-                {[
-                  "Review of your inquiry by our investor relations team",
-                  "Confidential strategy call to discuss your goals",
-                  "Introduction to opportunities matching your profile",
-                  "Guided onboarding with full documentation support",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
+            <div className="space-y-3">
+              {[
+                "Review by our investor relations team",
+                "Confidential strategy call",
+                "Introduction to matching opportunities",
+                "Guided onboarding support",
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                  <span className="text-muted-foreground text-sm">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Right Column - Form */}
-          <div className="bg-background rounded-2xl border border-border p-8 md:p-10">
+          <div className="bg-background rounded-2xl border border-border p-8 shadow-card">
             <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
               Submit Your Inquiry
             </h3>
@@ -181,14 +189,14 @@ const JoinSection = () => {
                   htmlFor="message"
                   className="block text-sm font-medium text-foreground mb-2"
                 >
-                  Tell us about your investment goals (optional)
+                  Investment Goals (optional)
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="bg-card border-border focus:border-primary min-h-[100px]"
+                  className="bg-card border-border focus:border-primary min-h-[80px]"
                   placeholder="What are you looking to achieve?"
                 />
               </div>
@@ -211,8 +219,7 @@ const JoinSection = () => {
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">
-                By submitting, you agree to our Privacy Policy. Your information is
-                secure and will never be shared.
+                Your information is secure and will never be shared.
               </p>
             </form>
           </div>
