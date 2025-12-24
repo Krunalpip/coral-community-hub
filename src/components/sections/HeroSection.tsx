@@ -1,0 +1,95 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Users, Building2, TrendingUp } from "lucide-react";
+import dubaiHero from "@/assets/dubai-hero.jpg";
+
+const stats = [
+  { icon: Users, value: "850+", label: "Active Members" },
+  { icon: Building2, value: "24", label: "Live Projects" },
+  { icon: TrendingUp, value: "AED 120M+", label: "Distributions Processed" },
+];
+
+const HeroSection = () => {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={dubaiHero}
+          alt="Dubai skyline at golden hour representing UAE investment opportunities"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 container-custom pt-32 pb-20">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 animate-fade-up">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-sm text-primary font-medium">
+              Dubai-Based Private Investment Community
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            Wealth Is Not What You Accumulate.{" "}
+            <span className="text-gradient-gold">
+              It Is What You Participate In.
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up leading-relaxed" style={{ animationDelay: "0.2s" }}>
+            Join a community of discerning investors accessing structured, asset-backed
+            opportunities across UAE real estate, logistics, aviation, and technology—with
+            clarity, transparency, and consistent income.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <Link to="/contact">
+              <Button variant="hero" size="xl" className="group">
+                Schedule Strategy Call
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link to="/benefits">
+              <Button variant="hero-outline" size="xl">
+                Explore the Community
+              </Button>
+            </Link>
+          </div>
+
+          {/* Trust Counters */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all"
+              >
+                <stat.icon className="w-6 h-6 text-primary mb-3" />
+                <span className="font-display text-3xl font-semibold text-foreground mb-1">
+                  {stat.value}
+                </span>
+                <span className="text-sm text-muted-foreground">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float">
+        <div className="w-6 h-10 rounded-full border-2 border-primary/50 flex items-start justify-center p-2">
+          <div className="w-1 h-2 rounded-full bg-primary animate-pulse" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
