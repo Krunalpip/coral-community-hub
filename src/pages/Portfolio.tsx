@@ -3,8 +3,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 import {
-  Building2,
+  Car,
   Plane,
   Truck,
   Cpu,
@@ -13,22 +14,25 @@ import {
   ArrowRight,
   Lock,
   TrendingUp,
+  Building2,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 const portfolioSectors = [
   {
-    icon: Building2,
-    sector: "Real Estate",
+    icon: Car,
+    sector: "Car Rental",
     status: "Active",
-    projects: 8,
-    deployed: "AED 125M",
-    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=500&fit=crop",
+    projects: 6,
+    deployed: "AED 75M",
+    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=500&fit=crop",
     description:
-      "Premium residential and commercial properties across Dubai Marina, Business Bay, Downtown Dubai, and emerging areas.",
+      "Premium and luxury vehicle rental fleets serving tourists, business travelers, and long-term residents across Dubai and Abu Dhabi.",
     opportunities: [
-      "Branded residences in prime locations",
-      "Commercial office spaces with blue-chip tenants",
-      "Holiday home portfolios with guaranteed returns",
+      "Luxury fleet expansion programs",
+      "Corporate leasing partnerships",
+      "Electric vehicle fleet investments",
     ],
   },
   {
@@ -109,13 +113,25 @@ const portfolioSectors = [
 ];
 
 const Portfolio = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 400;
+      scrollContainerRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <Helmet>
         <title>Portfolio | Coral Wealth Investment - UAE Asset-Backed Investments</title>
         <meta
           name="description"
-          content="Explore Coral Wealth Investment's diversified portfolio across UAE real estate, aviation, logistics, technology, and more."
+          content="Explore Coral Wealth Investment's diversified portfolio across UAE car rental, aviation, logistics, technology, and more."
         />
       </Helmet>
 
@@ -163,98 +179,135 @@ const Portfolio = () => {
             </div>
           </section>
 
-          {/* Portfolio Grid with Images */}
+          {/* Active Investment Sectors - Horizontal Scroll */}
           <section className="section-padding bg-background">
             <div className="container-custom">
-              <div className="grid gap-8">
-                {portfolioSectors.map((sector, index) => (
-                  <div
-                    key={sector.sector}
-                    className={`group rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-hover transition-all overflow-hidden ${
-                      index % 2 === 0 ? '' : 'lg:flex-row-reverse'
-                    }`}
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-2">
+                    Our Focus Areas
+                  </span>
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                    Active Investment Sectors
+                  </h2>
+                </div>
+                <div className="hidden md:flex gap-2">
+                  <button
+                    onClick={() => scroll("left")}
+                    className="p-3 rounded-full bg-card border border-border hover:border-accent hover:bg-accent/10 transition-all"
+                    aria-label="Scroll left"
                   >
-                    <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 !== 0 ? 'direction-rtl' : ''}`}>
-                      {/* Image Section */}
-                      <div className="relative h-64 lg:h-auto overflow-hidden">
-                        <img 
-                          src={sector.image}
-                          alt={sector.sector}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                              <sector.icon className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h2 className="font-display text-2xl font-bold text-white">
-                                {sector.sector}
-                              </h2>
-                              <span
-                                className={`text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded-full ${
-                                  sector.status === "Active"
-                                    ? "bg-green-500/80 text-white"
-                                    : sector.status === "Expanding"
-                                    ? "bg-accent/80 text-white"
-                                    : "bg-white/20 text-white"
-                                }`}
-                              >
-                                {sector.status}
-                              </span>
-                            </div>
-                          </div>
+                    <ChevronLeft className="w-5 h-5 text-foreground" />
+                  </button>
+                  <button
+                    onClick={() => scroll("right")}
+                    className="p-3 rounded-full bg-card border border-border hover:border-accent hover:bg-accent/10 transition-all"
+                    aria-label="Scroll right"
+                  >
+                    <ChevronRight className="w-5 h-5 text-foreground" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Scrollable Container */}
+            <div
+              ref={scrollContainerRef}
+              className="flex gap-6 overflow-x-auto pb-6 px-4 md:px-8 lg:px-16 scrollbar-hide snap-x snap-mandatory"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {portfolioSectors.map((sector) => (
+                <div
+                  key={sector.sector}
+                  className="group flex-shrink-0 w-[340px] md:w-[400px] rounded-2xl bg-card border border-border hover:border-accent/50 hover:shadow-hover transition-all overflow-hidden snap-start"
+                >
+                  {/* Image Section */}
+                  <div className="relative h-52 overflow-hidden">
+                    <img
+                      src={sector.image}
+                      alt={sector.sector}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                          <sector.icon className="w-6 h-6 text-white" />
                         </div>
-                      </div>
-
-                      {/* Content Section */}
-                      <div className="p-6 lg:p-8">
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                          <div className="p-4 rounded-xl bg-background border border-border">
-                            <TrendingUp className="w-5 h-5 text-accent mb-2" />
-                            <span className="text-xs text-muted-foreground block">Projects</span>
-                            <span className="font-display text-xl font-bold text-foreground">
-                              {sector.projects}
-                            </span>
-                          </div>
-                          <div className="p-4 rounded-xl bg-background border border-border">
-                            <Building2 className="w-5 h-5 text-accent mb-2" />
-                            <span className="text-xs text-muted-foreground block">Deployed</span>
-                            <span className="font-display text-xl font-bold text-accent">
-                              {sector.deployed}
-                            </span>
-                          </div>
-                        </div>
-
-                        <p className="text-muted-foreground leading-relaxed mb-4">
-                          {sector.description}
-                        </p>
-
-                        <h4 className="font-semibold text-foreground mb-3 text-sm">
-                          Current Opportunities:
-                        </h4>
-                        <ul className="space-y-2 mb-6">
-                          {sector.opportunities.map((opp, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-center gap-2 text-sm text-muted-foreground"
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                              {opp}
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground p-3 rounded-lg bg-muted/50">
-                          <Lock className="w-4 h-4" />
-                          Detailed information available to qualified members
+                        <div>
+                          <h3 className="font-display text-xl font-bold text-white">
+                            {sector.sector}
+                          </h3>
+                          <span
+                            className={`text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded-full ${
+                              sector.status === "Active"
+                                ? "bg-green-500/80 text-white"
+                                : sector.status === "Expanding"
+                                ? "bg-accent/80 text-white"
+                                : "bg-white/20 text-white"
+                            }`}
+                          >
+                            {sector.status}
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+
+                  {/* Content Section */}
+                  <div className="p-5">
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div className="p-3 rounded-xl bg-background border border-border">
+                        <TrendingUp className="w-4 h-4 text-accent mb-1" />
+                        <span className="text-xs text-muted-foreground block">Projects</span>
+                        <span className="font-display text-lg font-bold text-foreground">
+                          {sector.projects}
+                        </span>
+                      </div>
+                      <div className="p-3 rounded-xl bg-background border border-border">
+                        <Building2 className="w-4 h-4 text-accent mb-1" />
+                        <span className="text-xs text-muted-foreground block">Deployed</span>
+                        <span className="font-display text-lg font-bold text-accent">
+                          {sector.deployed}
+                        </span>
+                      </div>
+                    </div>
+
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2">
+                      {sector.description}
+                    </p>
+
+                    <h4 className="font-semibold text-foreground mb-2 text-sm">
+                      Opportunities:
+                    </h4>
+                    <ul className="space-y-1.5 mb-4">
+                      {sector.opportunities.slice(0, 2).map((opp, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                          <span className="line-clamp-1">{opp}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground p-2.5 rounded-lg bg-muted/50">
+                      <Lock className="w-3.5 h-3.5" />
+                      Details for qualified members
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile Scroll Hint */}
+            <div className="md:hidden text-center mt-4">
+              <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+                <ChevronLeft className="w-4 h-4" />
+                Swipe to explore more sectors
+                <ChevronRight className="w-4 h-4" />
+              </p>
             </div>
           </section>
 
