@@ -7,34 +7,34 @@ import {
 
 const faqs = [
   {
-    question: "Who is eligible to join Coral Wealth Investment?",
+    question: "What is Coral Wealth Investment?",
     answer:
-      "CWI is designed for individuals, professionals, and business owners who meet minimum investment thresholds and seek long-term, asset-backed income. We conduct a brief qualification process to ensure alignment between your financial goals and available opportunities. There is no geographic restriction—members join from across the UAE, GCC, and internationally.",
+      "CWI is a private investment community that has been empowering investors since 2014. We operate globally across multiple countries, connecting qualified investors with curated, asset-backed opportunities in the UAE.",
   },
   {
-    question: "How is my capital protected?",
+    question: "How do I join?",
     answer:
-      "Capital protection varies by asset class and structure. Real estate investments are backed by physical property. Aviation and logistics positions are secured by tangible assets and long-term contracts. All investments include legal documentation, escrow arrangements where applicable, and regular reporting. We never guarantee returns, but we do guarantee transparency.",
+      "Simply complete the membership inquiry form on our website. Our team will review your application and schedule a strategy call to discuss your investment goals and determine if CWI is the right fit for you.",
   },
   {
-    question: "What returns can I realistically expect?",
+    question: "Who can join CWI?",
     answer:
-      "Historical performance across our portfolio ranges from 1.8% to 6% monthly, depending on asset class and risk profile. Lower-risk real estate positions typically yield 1.8-2.5%, while higher-growth technology or aviation positions may target 4-6%. Past performance does not guarantee future results. We provide detailed projections before you commit to any opportunity.",
+      "CWI is designed for individuals, professionals, and business owners seeking financial independence through structured investments. We welcome members who are committed to long-term wealth building and value transparency over speculation.",
   },
   {
-    question: "How does the community model differ from a fund?",
+    question: "What returns can I expect?",
     answer:
-      "Unlike a pooled fund, CWI operates as a community where members choose individual opportunities based on their preferences. You maintain direct ownership or contractual rights to specific assets. There are no management fees on your capital—only participation in shared due diligence and deal structuring costs.",
+      "Our portfolio targets monthly returns between 1.8% and 6%, depending on the asset class and risk profile. Lower-risk positions typically yield 1.8-2.5%, while higher-growth opportunities may target 4-6%. Past performance does not guarantee future results.",
   },
   {
-    question: "What documentation and compliance is involved?",
+    question: "What sectors do you invest in?",
     answer:
-      "All investments operate within UAE regulatory frameworks. You will receive investment agreements, ownership documentation (where applicable), and quarterly performance reports. We work with licensed legal and financial advisors to ensure proper structuring. KYC verification is required for all members.",
+      "We invest across multiple sectors including Manufacturing, Energy, Technology, Logistics, Healthcare, Retail, Education, Aviation, and Robotics. Each sector is selected for income consistency and alignment with UAE's economic growth.",
   },
   {
-    question: "How do I begin the process?",
+    question: "How is my investment secured?",
     answer:
-      "Start by scheduling a strategy call with our team. We will discuss your investment goals, risk tolerance, and timeline. If there is mutual alignment, we will guide you through the qualification process, introduce relevant opportunities, and support you through your first participation. There is no obligation at any stage.",
+      "All investments are professionally managed with comprehensive insurance coverage. We conduct thorough due diligence on every opportunity, and assets are backed by tangible properties, equipment, or contracts. Regular reporting ensures full transparency.",
   },
 ];
 

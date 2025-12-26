@@ -1,42 +1,38 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
     id: 1,
-    name: "Ahmed Al-Rashid",
-    role: "Business Owner, Dubai",
+    name: "Amir K.",
+    role: "Business Owner",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
     content:
-      "After years of managing my own investments, joining CWI brought clarity I did not expect. The monthly distributions are consistent, and I understand exactly where my capital is deployed.",
-    memberSince: "2019",
-  },
-  {
-    id: 2,
-    name: "Sarah Mitchell",
-    role: "Healthcare Executive, Abu Dhabi",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
-    content:
-      "What attracted me was the transparency. Every quarter, I receive detailed reports on asset performance. No hidden fees, no complex structures—just straightforward participation.",
+      "Distributions cover my monthly expenses; the vetting process saves me countless hours of research.",
+    rating: 5,
     memberSince: "2020",
   },
   {
-    id: 3,
-    name: "Mohammed Qasim",
-    role: "Retired Engineer, Sharjah",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    id: 2,
+    name: "Sarah L.",
+    role: "Investment Professional",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
     content:
-      "The team took time to understand my risk tolerance and only recommended opportunities that matched my profile. This personalized approach made all the difference.",
-    memberSince: "2018",
+      "The sectors available exceed traditional investment options. Real diversification with real returns.",
+    rating: 5,
+    memberSince: "2021",
   },
   {
-    id: 4,
-    name: "Priya Sharma",
-    role: "IT Consultant, Dubai",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    id: 3,
+    name: "Marcus T.",
+    role: "Entrepreneur",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
     content:
-      "The time I save is invaluable. Instead of researching deals myself, I leverage the community's due diligence. In three years, I have participated in six opportunities—all performing as expected.",
-    memberSince: "2021",
+      "The structures are intelligent and transparent. I know exactly where my capital is deployed.",
+    rating: 5,
+    memberSince: "2019",
   },
 ];
 
@@ -68,7 +64,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonial Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id}
@@ -79,6 +75,16 @@ const TestimonialsSection = () => {
               }`}
               onClick={() => setCurrentIndex(index)}
             >
+              {/* Stars */}
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star 
+                    key={i} 
+                    className={`w-4 h-4 ${index === currentIndex ? 'text-accent fill-accent' : 'text-accent fill-accent'}`} 
+                  />
+                ))}
+              </div>
+
               <div className="flex items-center gap-3 mb-4">
                 <img 
                   src={testimonial.avatar}
@@ -157,6 +163,15 @@ const TestimonialsSection = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-10">
+          <Link to="/#testimonials">
+            <Button variant="outline" size="lg">
+              More Testimonials
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

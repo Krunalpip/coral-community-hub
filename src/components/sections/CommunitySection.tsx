@@ -1,62 +1,17 @@
-import { Shield, Users, TrendingUp, Building, Plane, Truck, Cpu, Car, Ship, Factory, Briefcase, Heart, GraduationCap, Leaf } from "lucide-react";
+import { Shield, Users, TrendingUp, Plane, Truck, Cpu, Heart, GraduationCap, Leaf, Factory, Ship, ShoppingBag, Car } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const sectors = [
-  { 
-    name: "Real Estate", 
-    icon: Building,
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Aviation", 
-    icon: Plane,
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Car Rental", 
-    icon: Car,
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Logistics", 
-    icon: Truck,
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Technology", 
-    icon: Cpu,
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Maritime", 
-    icon: Ship,
-    image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Manufacturing", 
-    icon: Factory,
-    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Financial Services", 
-    icon: Briefcase,
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Healthcare", 
-    icon: Heart,
-    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Education", 
-    icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop"
-  },
-  { 
-    name: "Green Energy", 
-    icon: Leaf,
-    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=300&fit=crop"
-  },
+  { name: "Logistics", icon: Truck, image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop" },
+  { name: "Technology", icon: Cpu, image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop" },
+  { name: "Healthcare", icon: Heart, image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=400&h=300&fit=crop" },
+  { name: "Education", icon: GraduationCap, image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop" },
+  { name: "Retail", icon: ShoppingBag, image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop" },
+  { name: "Manufacturing", icon: Factory, image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&h=300&fit=crop" },
+  { name: "Aviation", icon: Plane, image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=300&fit=crop" },
+  { name: "Energy", icon: Leaf, image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=300&fit=crop" },
+  { name: "Maritime", icon: Ship, image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&h=300&fit=crop" },
+  { name: "Car Rental", icon: Car, image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop" },
 ];
 
 const CommunitySection = () => {
@@ -72,22 +27,17 @@ const CommunitySection = () => {
 
     const autoScroll = () => {
       scrollPosition += scrollSpeed;
-      
-      // Reset to start when reaching the end (seamless loop)
       if (scrollPosition >= scrollContainer.scrollWidth / 2) {
         scrollPosition = 0;
       }
-      
       scrollContainer.scrollLeft = scrollPosition;
       animationId = requestAnimationFrame(autoScroll);
     };
 
-    // Start auto-scroll after a short delay
     const timeout = setTimeout(() => {
       animationId = requestAnimationFrame(autoScroll);
     }, 1000);
 
-    // Pause on hover
     const handleMouseEnter = () => cancelAnimationFrame(animationId);
     const handleMouseLeave = () => {
       animationId = requestAnimationFrame(autoScroll);
@@ -105,12 +55,11 @@ const CommunitySection = () => {
   }, []);
 
   return (
-    <section className="section-padding bg-background">
+    <section id="community" className="section-padding bg-background">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image & Stats */}
           <div className="relative">
-            {/* Main Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-hover">
               <img 
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop"
@@ -123,16 +72,16 @@ const CommunitySection = () => {
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <div className="grid grid-cols-3 gap-4">
                   <div>
-                    <p className="text-2xl font-bold">850+</p>
-                    <p className="text-sm opacity-90">Active Members</p>
+                    <p className="text-2xl font-bold">158+</p>
+                    <p className="text-sm opacity-90">Shareholders</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold">AED 120M+</p>
+                    <p className="text-2xl font-bold">AED 30M+</p>
                     <p className="text-sm opacity-90">Capital Deployed</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold">24</p>
-                    <p className="text-sm opacity-90">Live Projects</p>
+                    <p className="text-2xl font-bold">7</p>
+                    <p className="text-sm opacity-90">Countries</p>
                   </div>
                 </div>
               </div>
@@ -155,21 +104,22 @@ const CommunitySection = () => {
           {/* Right Column - Text Content */}
           <div>
             <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
-              Why Community Matters
+              The Network
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              From Accumulation to{" "}
-              <span className="text-gradient-brand">Structured Participation</span>
+              Modern Community Building Wealth Through{" "}
+              <span className="text-gradient-brand">Clarity</span>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                True financial independence comes from
-                <strong className="text-foreground"> systematic participation</strong> in
-                income-generating assets, not just savings.
+                Connect owners, individuals, and professionals to{" "}
+                <strong className="text-foreground">multiplication</strong>. Our structures 
+                align for WEALTH without time drain.
               </p>
               <p>
-                CWI members gain access to curated, asset-backed opportunities that have been
-                vetted for consistency—not speculation.
+                Opportunities span logistics, tech, healthcare, education—with transparency 
+                over speculation. Our framework spreads resources across risks, targeting 
+                1.8-6% monthly returns.
               </p>
             </div>
 
@@ -184,6 +134,10 @@ const CommunitySection = () => {
                 <span className="text-sm text-foreground font-medium">Risk Profiling</span>
               </div>
             </div>
+
+            <a href="#why-it-works" className="inline-block mt-6 text-accent font-semibold hover:underline">
+              Discover How It Works →
+            </a>
           </div>
         </div>
 
@@ -197,7 +151,6 @@ const CommunitySection = () => {
             className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
             style={{ scrollBehavior: 'auto' }}
           >
-            {/* Duplicate sectors for seamless loop */}
             {[...sectors, ...sectors].map((sector, index) => (
               <div
                 key={`${sector.name}-${index}`}

@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import CommunitySection from "@/components/sections/CommunitySection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
+import UpcomingProjectsSection from "@/components/sections/UpcomingProjectsSection";
 import WhyItWorksSection from "@/components/sections/WhyItWorksSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import VideoInsightsSection from "@/components/sections/VideoInsightsSection";
@@ -17,11 +18,11 @@ const Index = () => {
         <title>Coral Wealth Investment | Dubai Private Investment Community</title>
         <meta
           name="description"
-          content="Join Dubai's premier private investment community. Access structured, asset-backed opportunities across UAE real estate, logistics, aviation, and technology with consistent monthly income."
+          content="Join Dubai's premier private investment community. Access structured, asset-backed opportunities across UAE logistics, aviation, technology, and more with 1.8-6% monthly returns."
         />
         <meta
           name="keywords"
-          content="Dubai investment, UAE private investment, asset-backed income, wealth building Dubai, real estate investment UAE, private investment community"
+          content="Dubai investment, UAE private investment, asset-backed income, wealth building Dubai, private investment community, monthly income investments"
         />
         <link rel="canonical" href="https://coraluae.com/" />
         
@@ -43,11 +44,20 @@ const Index = () => {
             url: "https://coraluae.com",
             logo: "https://coraluae.com/logo.png",
             description:
-              "Dubai-based private investment community offering structured, asset-backed investment opportunities.",
+              "Dubai-based private investment community offering structured, asset-backed investment opportunities since 2014.",
+            foundingDate: "2014",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Dubai",
+              streetAddress: "SIT Towers",
+              addressLocality: "Dubai Silicon Oasis",
+              addressRegion: "Dubai",
               addressCountry: "UAE",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+971-4-552-8423",
+              email: "info@coraluae.com",
+              contactType: "customer service",
             },
             sameAs: [],
           })}
@@ -60,6 +70,7 @@ const Index = () => {
           <HeroSection />
           <CommunitySection />
           <PortfolioSection />
+          <UpcomingProjectsSection />
           <WhyItWorksSection />
           <TestimonialsSection />
           <VideoInsightsSection />

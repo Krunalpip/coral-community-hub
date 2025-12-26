@@ -1,22 +1,22 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Building2, TrendingUp } from "lucide-react";
+import { ArrowRight, Users, Briefcase, Calendar } from "lucide-react";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 
 const stats = [
-  { icon: Users, value: "850+", label: "Active Members" },
-  { icon: Building2, value: "24", label: "Live Projects" },
-  { icon: TrendingUp, value: "AED 120M+", label: "Distributions Processed" },
+  { icon: Users, value: "158+", label: "Members" },
+  { icon: Briefcase, value: "39+", label: "Projects" },
+  { icon: Calendar, value: "Monthly", label: "Distributions" },
 ];
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image/Video */}
       <div className="absolute inset-0 z-0">
         <img
           src={dubaiHero}
-          alt="Dubai skyline at golden hour representing UAE investment opportunities"
+          alt="Dubai skyline representing UAE investment opportunities"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
@@ -36,32 +36,35 @@ const HeroSection = () => {
 
           {/* Headline */}
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Wealth Is Not What You Accumulate.{" "}
+            Where Community Meets{" "}
             <span className="text-gradient-brand">
-              It Is What You Participate In.
+              Opportunity
             </span>
           </h1>
 
           {/* Subheadline */}
+          <p className="text-xl md:text-2xl font-semibold text-foreground mb-4 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+            Participate. Diversify. Multiply.
+          </p>
+
+          {/* Text */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up leading-relaxed" style={{ animationDelay: "0.2s" }}>
-            Join a community of discerning investors accessing structured, asset-backed
-            opportunities across UAE real estate, logistics, aviation, and technology—with
-            clarity, transparency, and consistent income.
+            Private network building income via UAE asset-backed opportunities.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Link to="/contact">
+            <a href="#form-member">
               <Button variant="hero" size="xl" className="group">
-                Schedule Strategy Call
+                Schedule Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </Link>
-            <Link to="/benefits">
+            </a>
+            <a href="#community">
               <Button variant="hero-outline" size="xl">
-                Explore the Community
+                Explore Community
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Trust Counters */}

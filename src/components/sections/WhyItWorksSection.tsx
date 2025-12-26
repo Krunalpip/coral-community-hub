@@ -1,60 +1,60 @@
 import {
-  Search,
+  Lightbulb,
   ShieldCheck,
-  Users,
-  FileCheck,
+  Key,
   Network,
+  CheckCircle2,
   Scale,
 } from "lucide-react";
 
 const pillars = [
   {
-    icon: Search,
+    number: "01",
+    icon: Lightbulb,
     title: "Intelligence Sharing",
-    description:
-      "Access proprietary market insights and deal flow analysis from years of regional experience.",
+    description: "14+ years of UAE market experience translated into actionable insights.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
   },
   {
+    number: "02",
     icon: ShieldCheck,
-    title: "Risk Filtration",
-    description:
-      "Multi-layered risk assessment including legal, financial, and operational due diligence.",
+    title: "Risk Mitigation",
+    description: "Multi-layered due diligence, legal review, and insurance coverage.",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop"
   },
   {
-    icon: FileCheck,
-    title: "Due Diligence Framework",
-    description:
-      "Standardized evaluation protocols ensure consistent quality across all asset classes.",
+    number: "03",
+    icon: Key,
+    title: "Exclusive Access",
+    description: "Private opportunities not available to general public investors.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
   },
   {
+    number: "04",
     icon: Network,
     title: "Network Leverage",
-    description:
-      "Established relationships with developers, operators, and institutions across the GCC.",
+    description: "Established connections with developers, operators, and institutions.",
     image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop"
   },
   {
-    icon: Scale,
-    title: "Compliance Structure",
-    description:
-      "All activities operate within UAE regulatory frameworks with proper documentation.",
+    number: "05",
+    icon: CheckCircle2,
+    title: "Validation Process",
+    description: "90% of opportunities are filtered out—only the best proceed.",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop"
   },
   {
-    icon: Users,
-    title: "Decision Frameworks",
-    description:
-      "Structured processes help evaluate opportunities based on your risk tolerance and goals.",
+    number: "06",
+    icon: Scale,
+    title: "Compliance Framework",
+    description: "All activities operate within UAE regulatory requirements.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop"
   },
 ];
 
 const WhyItWorksSection = () => {
   return (
-    <section className="section-padding bg-background relative overflow-hidden">
+    <section id="why-it-works" className="section-padding bg-background relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
@@ -66,8 +66,8 @@ const WhyItWorksSection = () => {
             Why It Works
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Experience Translated Into{" "}
-            <span className="text-gradient-brand">Systematic Process</span>
+            Built on Intelligence, Structure,{" "}
+            <span className="text-gradient-brand">Leverage</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             What separates hope from confidence is structure. Our frameworks transform
@@ -91,7 +91,8 @@ const WhyItWorksSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                <div className="absolute bottom-4 left-4">
+                <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                  <span className="text-3xl font-bold text-accent/80">{pillar.number}</span>
                   <div className="w-12 h-12 rounded-xl bg-accent/90 flex items-center justify-center shadow-lg">
                     <pillar.icon className="w-6 h-6 text-white" />
                   </div>
