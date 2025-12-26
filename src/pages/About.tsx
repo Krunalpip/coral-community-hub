@@ -13,10 +13,10 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { value: "8+", label: "Years of Experience" },
-  { value: "850+", label: "Community Members" },
-  { value: "AED 500M+", label: "Assets Under Guidance" },
-  { value: "24", label: "Active Projects" },
+  { value: "158+", label: "Shareholders" },
+  { value: "7", label: "Countries" },
+  { value: "39+", label: "Portfolios" },
+  { value: "AED 30M+", label: "Capital Deployed" },
 ];
 
 const values = [

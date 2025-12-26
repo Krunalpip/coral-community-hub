@@ -12,7 +12,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Office Location",
-    content: "Dubai, United Arab Emirates",
+    content: "SIT Towers, Dubai Silicon Oasis",
     detail: "By appointment only",
   },
   {
@@ -24,7 +24,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    content: "+971 XX XXX XXXX",
+    content: "+971 4 552 8423",
     detail: "Sun-Thu, 9AM-6PM GST",
   },
   {

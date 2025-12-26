@@ -112,7 +112,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-accent mt-1 flex-shrink-0" />
                 <span className="text-primary-foreground/70 text-sm">
-                  Dubai, United Arab Emirates
+                  SIT Towers, Dubai Silicon Oasis, UAE
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -127,10 +127,10 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-accent flex-shrink-0" />
                 <a
-                  href="tel:+97100000000"
+                  href="tel:+97145528423"
                   className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
-                  +971 XX XXX XXXX
+                  +971 4 552 8423
                 </a>
               </li>
             </ul>
@@ -140,7 +140,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} CWI Investment. All rights reserved.
+            © {new Date().getFullYear()} Coral Wealth Investment. All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (

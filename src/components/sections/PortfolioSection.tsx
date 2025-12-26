@@ -1,59 +1,98 @@
-import { ArrowUpRight, Building2, Plane, Truck, Cpu } from "lucide-react";
+import { ArrowUpRight, Package, Plane, Shield, Bot, GraduationCap, Cpu, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const portfolioItems = [
   {
     id: 1,
-    sector: "Real Estate",
-    icon: Building2,
-    title: "Premium Residential Portfolio",
-    location: "Dubai Marina & Business Bay",
-    deployed: "AED 45M",
-    returns: "2.4% Monthly",
+    sector: "Containers & Caravans",
+    icon: Package,
+    title: "Starlink Exp",
+    description: "Asset-backed trading in luxury containers and caravans.",
+    invested: "AED 420K",
+    value: "AED 916K",
+    roi: "+36%",
+    profit: "+14%",
     status: "Fully Operational",
-    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop",
-    description:
-      "Diversified holdings across premium residential units generating consistent rental income.",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
   },
   {
     id: 2,
-    sector: "Aviation",
+    sector: "Luxury Air Travel",
     icon: Plane,
-    title: "Regional Aircraft Leasing",
-    location: "GCC Region",
-    deployed: "AED 28M",
-    returns: "3.2% Monthly",
+    title: "SkyRoyce",
+    description: "Aviation marketplace for luxury private jet experiences.",
+    invested: "AED 2,500K",
+    value: "AED 3,030K",
+    roi: "+21.1%",
+    profit: "+13%",
     status: "Active Distribution",
     image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&h=400&fit=crop",
-    description:
-      "Structured aircraft leasing with established regional carriers, backed by physical assets.",
   },
   {
     id: 3,
-    sector: "Logistics",
-    icon: Truck,
-    title: "E-Commerce Fulfillment Centers",
-    location: "JAFZA & DWC",
-    deployed: "AED 32M",
-    returns: "2.8% Monthly",
+    sector: "General Aviation",
+    icon: Shield,
+    title: "GAC Aviation",
+    description: "Pilot access and aviation safety training programs.",
+    invested: "AED 840K",
+    value: "AED 1,580K",
+    roi: "+19%",
+    profit: "+7%",
     status: "Expanding",
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop",
-    description:
-      "Strategic warehouse infrastructure supporting UAE's growing e-commerce sector.",
+    image: "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&h=400&fit=crop",
   },
   {
     id: 4,
-    sector: "Technology",
-    icon: Cpu,
-    title: "AI & Robotics Ventures",
-    location: "Dubai Silicon Oasis",
-    deployed: "AED 15M",
-    returns: "5.5% Monthly",
+    sector: "Humanoid Robotics",
+    icon: Bot,
+    title: "Fortune Robotics",
+    description: "Healthcare, hospitality, and automation robotics solutions.",
+    invested: "AED 1,200K",
+    value: "AED 2,000K+",
+    roi: "+36-48%",
+    profit: "+13%",
     status: "Growth Phase",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop",
-    description:
-      "Equity participation in technology companies focused on industrial automation and AI.",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop",
+  },
+  {
+    id: 5,
+    sector: "Education Innovation",
+    icon: GraduationCap,
+    title: "Silicon Institute",
+    description: "AI and robotics education platform for future skills.",
+    invested: "AED 600K",
+    value: "AED 900K+",
+    roi: "+34%",
+    profit: "+8%",
+    status: "Active",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop",
+  },
+  {
+    id: 6,
+    sector: "AI Automation",
+    icon: Cpu,
+    title: "Backergy Soft",
+    description: "SaaS workflows and AI-powered business automation.",
+    invested: "AED 2,690K",
+    value: "AED 3,610K",
+    roi: "+30%",
+    profit: "+43% efficiency",
+    status: "Active",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+  },
+  {
+    id: 7,
+    sector: "Luxury Interiors",
+    icon: Home,
+    title: "L-Circle",
+    description: "Premium home, office, and gym interior fit-outs.",
+    invested: "—",
+    value: "—",
+    roi: "+32%",
+    profit: "—",
+    status: "Active",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop",
   },
 ];
 
@@ -67,8 +106,8 @@ const PortfolioSection = () => {
             Portfolio Snapshot
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Real Assets. Real Returns.{" "}
-            <span className="text-gradient-brand">Documented Performance.</span>
+            Real Assets. Lasting Income.{" "}
+            <span className="text-gradient-brand">Diversification.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             Every portfolio position represents tangible assets, verified due diligence,
@@ -77,14 +116,14 @@ const PortfolioSection = () => {
         </div>
 
         {/* Portfolio Grid with Images */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {portfolioItems.map((item) => (
             <div
               key={item.id}
               className="group rounded-2xl bg-background border border-border hover:border-accent/30 hover:shadow-hover transition-all duration-300 overflow-hidden"
             >
               {/* Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
                 <img 
                   src={item.image}
                   alt={item.title}
@@ -107,8 +146,8 @@ const PortfolioSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+              <div className="p-5">
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -116,18 +155,22 @@ const PortfolioSection = () => {
                 </p>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-card border border-border">
+                <div className="grid grid-cols-2 gap-2 p-3 rounded-xl bg-card border border-border">
                   <div className="text-center">
-                    <span className="text-xs text-muted-foreground block">Location</span>
-                    <span className="text-xs text-foreground font-medium">{item.location}</span>
-                  </div>
-                  <div className="text-center border-x border-border">
-                    <span className="text-xs text-muted-foreground block">Deployed</span>
-                    <span className="text-xs text-foreground font-medium">{item.deployed}</span>
+                    <span className="text-xs text-muted-foreground block">Invested</span>
+                    <span className="text-sm text-foreground font-medium">{item.invested}</span>
                   </div>
                   <div className="text-center">
-                    <span className="text-xs text-muted-foreground block">Returns</span>
-                    <span className="text-xs text-accent font-semibold">{item.returns}</span>
+                    <span className="text-xs text-muted-foreground block">Value</span>
+                    <span className="text-sm text-foreground font-medium">{item.value}</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-xs text-muted-foreground block">ROI</span>
+                    <span className="text-sm text-accent font-semibold">{item.roi}</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-xs text-muted-foreground block">Profit</span>
+                    <span className="text-sm text-accent font-semibold">{item.profit}</span>
                   </div>
                 </div>
               </div>
